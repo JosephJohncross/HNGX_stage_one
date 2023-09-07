@@ -16,9 +16,11 @@ def get_slack_details(request):
     day_name = current_datetime.strftime('%A')
 
     # UTC Formatting to precision of +/-2 minute
-    now = datetime.datetime.utcnow()
-    utc_timezone = pytz.timezone("UTC")
-    current_utc_time = utc_timezone.localize(now)
+    # now = datetime.datetime.utcnow()
+    # utc_timezone = pytz.timezone("UTC")
+    # current_utc_time = utc_timezone.localize(now)
+    current_utc_time = datetime.datetime.utcnow()
+    formatted_utc_time = current_utc_time.strftime('%Y-%m-%dT%H:%M:%SZ')
 
     slack_name = request.query_params.get('slack_name')
     track = request.query_params.get('track')
@@ -26,7 +28,7 @@ def get_slack_details(request):
     github_file_url = "https://github.com/JosephJohncross/HNGX_stage_one/blob/main/endpoint_intro/views.py"
     github_repo_url = "https://github.com/JosephJohncross/HNGX_stage_one"
     status_code = 200
-    utc_time = current_utc_time
+    utc_time = formatted_utc_time
 
     # slack_name: slack_name,
     # current_day: current_day,
