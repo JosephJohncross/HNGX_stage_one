@@ -25,7 +25,7 @@ def get_slack_details(request):
     current_day = day_name
     github_file_url = "https://github.com/JosephJohncross/HNGX_stage_one/blob/main/endpoint_intro/views.py"
     github_repo_url = "https://github.com/JosephJohncross/HNGX_stage_one"
-    status_code = "200"
+    status_code = 200
     utc_time = current_utc_time
 
     # slack_name: slack_name,

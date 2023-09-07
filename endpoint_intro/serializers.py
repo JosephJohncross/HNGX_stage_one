@@ -10,4 +10,4 @@ class SlackSerializer(serializers.Serializer):
     track = serializers.CharField()
     github_file_url = serializers.CharField()
     github_repo_url = serializers.CharField()
-    status_code = serializers.CharField()
+    status_code = serializers.IntegerField()
